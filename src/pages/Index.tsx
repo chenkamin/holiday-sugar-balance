@@ -1,4 +1,3 @@
-import heroImage from "@/assets/hero-health.jpg";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import AboutSection from "@/components/AboutSection";
 import { CheckCircle, Star, Users, Award } from "lucide-react";
@@ -26,8 +25,9 @@ const Index = () => {
                 </h1>
                 
                 <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                  קבל מדריך מקצועי ומעשי שיעזור לך ליהנות מהחגים 
-                  תוך שמירה על איזון מושלם ברמות הסוכר בדם
+                עוברים את החגים בלי קפיצות סוכר – ובלי לוותר על האוכל הטעים!
+                <br />אתם בטח שואלים איך?<br /> בדיוק בשביל זה הכנתי לכם מדריך קצר, פשוט וישים 
+                  שיעזור לכם לעבור את חגי תשרי באיזון סוכר מלא – בלי רגשות אשם ובלי דיאטות.
                 </p>
               </div>
 
@@ -46,16 +46,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hero Image Section */}
-      <section className="py-16 px-4">
+      {/* Preview Section */}
+      <section className="py-4 px-4">
         <div className="container mx-auto max-w-5xl">
-          <div className="relative">
-            <img 
-              src={heroImage} 
-              alt="מזונות בריאים לחגים - איזון סוכר" 
-              className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-2xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-healthPrimary/20 to-transparent rounded-2xl"></div>
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-l from-healthPrimary to-healthSecondary bg-clip-text text-transparent">
+              קבלו הצצה למדריך 
+              <span className="text-healthPrimary">👀</span>
+            </h2>
+            <div className="w-1/2 mx-auto rounded-2xl shadow-2xl overflow-hidden">
+              <img 
+                src="/src/assets/freeguidr.png" 
+                alt="הצצה למדריך החינמי" 
+                className="w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -83,7 +88,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-healthLight">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2024 טובה - דיאטנית קלינית | כל הזכויות שמורות</p>
+          <p>© 2024 בר דיאמנט קמינסקי - דיאטנית קלינית | כל הזכויות שמורות</p>
         </div>
       </footer>
     </div>
