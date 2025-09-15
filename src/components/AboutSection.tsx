@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import profileImage from "@/assets/profile-tova.jpg";
 
 const AboutSection = () => {
   return (
@@ -7,13 +8,17 @@ const AboutSection = () => {
       <Card className="bg-card/80 backdrop-blur-sm border-healthSecondary/20">
         <CardContent className="p-8 text-right" dir="rtl">
           <div className="flex flex-col items-center space-y-6">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-bl from-healthPrimary to-healthSecondary flex items-center justify-center text-white text-3xl font-bold">
-              ד״ר
+            <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-healthPrimary/20">
+              <img 
+                src={profileImage} 
+                alt="טובה - דיאטנית קלינית מומחית בסוכרת"
+                className="w-full h-full object-cover"
+              />
             </div>
             
             <div className="text-center space-y-4">
               <h3 className="text-2xl font-bold text-foreground">
-                ד״ר שרה כהן - מומחית תזונה קלינית
+                טובה - דיאטנית קלינית מומחית בסוכרת
               </h3>
               
               <div className="flex flex-wrap gap-2 justify-center">
@@ -24,27 +29,26 @@ const AboutSection = () => {
                   מומחית בסוכרת
                 </Badge>
                 <Badge variant="secondary" className="bg-healthLight text-healthAccent">
-                  15+ שנות ניסיון
+                  מאז 2019
                 </Badge>
               </div>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
                 <p>
-                  שלום, אני ד״ר שרה כהן, דיאטנית קלינית מוסמכת עם התמחות בטיפול ובאיזון רמות הסוכר. 
-                  במשך יותר מ-15 שנה אני מסייעת לאנשים להשיג איזון מושלם ברמות הסוכר בדם, 
-                  במיוחד בתקופות מאתגרות כמו החגים.
+                  אני דיאטנית קלינית מאז 2019, ובשנים האחרונות אני חיה ונושמת תזונה ואנשים. את דרכי התחלתי בלימודים באוניברסיטה העברית, ולאחר הסטאז׳ בחרתי להתמחות דווקא בתחום שמרגש אותי במיוחד – סוכרת.
                 </p>
                 
                 <p>
-                  פיתחתי מתודה ייחודית שמאפשרת ליהנות מהחגים ללא ויתורים מיותרים, 
-                  תוך שמירה על רמות סוכר יציבות ובריאות מיטבית. המדריך החינמי שלי כבר עזר 
-                  לאלפי אנשים לעבור את תקופת החגים בביטחון ובבריאות.
+                  עשיתי קורס מקצועי לסוכרת באוניברסיטת תל אביב, ומשם המשכתי לעבוד במכוני סוכרת של מכבי וכללית. שם זכיתי ללוות מאות מטופלים – עם סוכרת מסוג 1, סוג 2 וגם סוכרת הריון – ולעזור להם למצוא את הדרך שלהם לאיזון.
+                </p>
+
+                <p>
+                  עם הזמן פיתחתי גישה משלי: שילוב של ידע מקצועי, ליווי צמוד ואכילה קשובה, שמאפשר להגיע לאיזון ולשמור עליו לאורך זמן – בלי דיאטות מתישות ובלי רגשות אשם.
                 </p>
 
                 <div className="bg-healthLight/50 p-4 rounded-lg border border-healthSecondary/20">
                   <p className="font-medium text-healthAccent">
-                    💡 "החגים לא צריכים להיות מלחמה נגד הסוכר שלכם - 
-                    הם יכולים להיות תקופה של הנאה מבוקרת ובריאה"
+                    את הידע והניסיון הזה הבאתי ליצירת הסדנה לאיזון סוכר ואורח חיים בריא, שבה אני מלמדת איך לעשות שינוי אמיתי, פרקטי וקליל — כזה שמשתלב בחיים עצמם ומחזיר שליטה, בריאות ושקט.
                   </p>
                 </div>
               </div>

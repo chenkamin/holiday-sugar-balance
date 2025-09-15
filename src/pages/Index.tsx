@@ -8,10 +8,10 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-healthLight/30 to-background" dir="rtl">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex justify-center">
             {/* Hero Content */}
-            <div className="space-y-8 text-right">
+            <div className="space-y-8 text-center">
               <div className="space-y-4">
                 <div className="inline-flex items-center bg-successGreen/10 text-successGreen px-4 py-2 rounded-full text-sm font-medium">
                   <Star className="w-4 h-4 ml-2" />
@@ -25,44 +25,16 @@ const Index = () => {
                   </span>
                 </h1>
                 
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                   קבל מדריך מקצועי ומעשי שיעזור לך ליהנות מהחגים 
-                  <br />
                   תוך שמירה על איזון מושלם ברמות הסוכר בדם
                 </p>
               </div>
 
-              {/* Benefits */}
-              <div className="space-y-3">
-                {[
-                  "תפריט מותאם אישית לחגים",
-                  "טיפים מעשיים לאיזון סוכר",
-                  "מתכונים בריאים וטעימים",
-                  "מדריך ניהול לחצים ורגשות"
-                ].map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-successGreen" />
-                    <span className="text-foreground font-medium">{benefit}</span>
-                  </div>
-                ))}
+              {/* Lead Capture Form */}
+              <div className="max-w-md mx-auto">
+                <LeadCaptureForm />
               </div>
-
-              {/* Social Proof */}
-              <div className="flex items-center gap-6 pt-4">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-healthPrimary" />
-                  <span className="text-sm text-muted-foreground">3,000+ אנשים כבר הורידו</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-healthPrimary" />
-                  <span className="text-sm text-muted-foreground">מומלץ על ידי רופאים</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Lead Capture Form */}
-            <div className="flex justify-center lg:justify-end">
-              <LeadCaptureForm />
             </div>
           </div>
         </div>
@@ -111,7 +83,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-healthLight">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2024 ד״ר שרה כהן - מומחית תזונה קלינית | כל הזכויות שמורות</p>
+          <p>© 2024 טובה - דיאטנית קלינית | כל הזכויות שמורות</p>
         </div>
       </footer>
     </div>
