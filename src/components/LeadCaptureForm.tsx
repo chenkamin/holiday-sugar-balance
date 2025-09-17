@@ -145,7 +145,7 @@ const LeadCaptureForm = () => {
       </CardContent>
     </Card>
     <Dialog open={isThankYouOpen} onOpenChange={setIsThankYouOpen}>
-      <DialogContent className="sm:max-w-md" dir="rtl">
+      <DialogContent className="sm:max-w-md w-[90%] max-w-[350px]" dir="rtl">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center bg-gradient-to-l from-healthPrimary to-healthSecondary bg-clip-text text-transparent">
             תודה רבה!
