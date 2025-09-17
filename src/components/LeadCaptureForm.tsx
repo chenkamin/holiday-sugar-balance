@@ -5,8 +5,17 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { toast } from "sonner";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 
 const LeadCaptureForm = () => {
+  const [isThankYouOpen, setIsThankYouOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,7 +23,7 @@ const LeadCaptureForm = () => {
     marketingConsent: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone) {
       toast.error("אנא מלא את כל השדות");
@@ -24,9 +33,36 @@ const LeadCaptureForm = () => {
       toast.error("יש לאשר קבלת דיוור");
       return;
     }
-    toast.success("תודה! המדריך נשלח אליך במייל");
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await fetch('https://hook.eu2.make.com/jov57xf5gmhbwia4lp3uaie8nkip2cd4', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          marketingConsent: formData.marketingConsent
+        })
+      });
+
+      if (response.ok) {
+        setIsThankYouOpen(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          marketingConsent: false
+        });
+      } else {
+        toast.error("אירעה שגיאה, אנא נסה שוב");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error("אירעה שגיאה, אנא נסה שוב");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +80,7 @@ const LeadCaptureForm = () => {
   };
 
   return (
+    <>
     <Card className="w-full max-w-md mx-auto bg-card/90 backdrop-blur-sm border-healthSecondary/20 shadow-[var(--health-glow)]">
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-2xl font-bold bg-gradient-to-l from-healthPrimary to-healthSecondary bg-clip-text text-transparent">
@@ -95,7 +132,7 @@ const LeadCaptureForm = () => {
               className="border-healthPrimary data-[state=checked]:bg-healthPrimary"
             />
             <Label htmlFor="marketing-consent" className="text-sm text-muted-foreground text-right flex-1">
-              אני מאשר/ת קבלת דיוור שיווקי ועדכונים על פעילות המרכז
+              אני מאשר/ת קבלת דיוור שיווקי ועדכונים  
             </Label>
           </div>
           <Button 
@@ -107,6 +144,26 @@ const LeadCaptureForm = () => {
         </form>
       </CardContent>
     </Card>
+    <Dialog open={isThankYouOpen} onOpenChange={setIsThankYouOpen}>
+      <DialogContent className="sm:max-w-md" dir="rtl">
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-center bg-gradient-to-l from-healthPrimary to-healthSecondary bg-clip-text text-transparent">
+            תודה רבה!
+          </DialogTitle>
+    
+        </DialogHeader>
+        <div className="flex flex-col items-center space-y-4 mt-4">
+
+          <Button 
+            onClick={() => window.open('https://drive.google.com/file/d/1lTMDYa1OxVnI6WrAeThXgjDPXP6Vlff9/view?usp=sharing', '_blank')}
+            className="w-full bg-gradient-to-l from-healthPrimary to-healthSecondary hover:opacity-90 text-white font-semibold py-6 shadow-[var(--health-glow)] hover:shadow-lg transition-all duration-300"
+          >
+            לחץ כאן לצפייה במדריך 📚
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 };
 
