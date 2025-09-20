@@ -56,7 +56,7 @@ const Index = () => {
             </h2>
             <div className="w-1/2 mx-auto rounded-2xl shadow-2xl overflow-hidden">
               <img 
-                src="/src/assets/freeguidr.png" 
+                src="/assets/freeguidr.png" 
                 alt="הצצה למדריך החינמי" 
                 className="w-full object-cover"
               />
