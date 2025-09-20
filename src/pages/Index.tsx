@@ -88,7 +88,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-healthLight">
         <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>© 2024 בר דיאמנט קמינסקי - דיאטנית קלינית | כל הזכויות שמורות</p>
+          <p>© 2025 בר דיאמנט קמינסקי - דיאטנית קלינית | כל הזכויות שמורות</p>
         </div>
       </footer>
     </div>
