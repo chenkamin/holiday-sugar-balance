@@ -77,7 +77,7 @@ const Index = () => {
             מוכנים להתחיל את המסע לחגים בריאים?
           </h2>
           <p className="text-lg text-muted-foreground">
-            הורד עכשיו את המדריך החינמי ותתחיל ליהנות מחגים ללא דאגות
+            תורידו עכשיו את המדריך החינמי, תיישמו את הטיפים  ותהנו מארוחות חג ללא דאגות
           </p>
           <div className="max-w-md mx-auto">
             <LeadCaptureForm />
