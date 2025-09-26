@@ -74,7 +74,7 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-2xl text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold">
-            מוכן להתחיל את המסע לחגים בריאים?
+            מוכנים להתחיל את המסע לחגים בריאים?
           </h2>
           <p className="text-lg text-muted-foreground">
             הורד עכשיו את המדריך החינמי ותתחיל ליהנות מחגים ללא דאגות

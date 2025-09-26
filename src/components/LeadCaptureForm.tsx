@@ -84,10 +84,10 @@ const LeadCaptureForm = () => {
     <Card className="w-full max-w-md mx-auto bg-card/90 backdrop-blur-sm border-healthSecondary/20 shadow-[var(--health-glow)]">
       <CardHeader className="text-center pb-4">
         <CardTitle className="text-2xl font-bold bg-gradient-to-l from-healthPrimary to-healthSecondary bg-clip-text text-transparent">
-          קבל את המדריך החינמי
+          בשביל לקבל את המדריך החינמי
         </CardTitle>
         <p className="text-muted-foreground text-sm">
-          השאר פרטים וקבל את המדריך הכי מקיף לאיזון סוכר בחגים
+          {/* השאר פרטים וקבל את המדריך הכי מקיף לאיזון סוכר בחגים */}
         </p>
       </CardHeader>
       <CardContent>
@@ -139,8 +139,7 @@ const LeadCaptureForm = () => {
             type="submit" 
             className="w-full bg-gradient-to-l from-healthPrimary to-healthSecondary hover:opacity-90 text-white font-semibold py-3 shadow-[var(--health-glow)] hover:shadow-lg transition-all duration-300"
           >
-            קבל את המדריך עכשיו 🎯
-          </Button>
+אני רוצה את המדריך          </Button>
         </form>
       </CardContent>
     </Card>
